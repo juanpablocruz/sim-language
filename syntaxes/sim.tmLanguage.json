@@ -1,0 +1,124 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SIM",
+	"patterns": [
+		
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "entity"
+		},
+		{
+			"include": "#constants-and-special-vars"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.number-sign.sim",
+					"match": "#.*"
+				}
+			]
+		},
+		"constants-and-special-vars": {
+			"patterns": [
+				{
+					"comment": "booleans",
+					"name": "constant.language.bool.sim",
+					"match": "\\b(true|false)\\b"
+				},
+				{
+					"comment": "integers",
+					"match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?|full)\\b",
+					"name": "constant.numeric.sim"
+				},
+				{
+					"match": "\\b(null|empty|number)\\b",
+					"name": "constant.language.sim"
+				},{
+					"match": "\\b(rules|interactions|properties)\\b",
+					"name": "keyword.declaration.sim"
+				},
+				{
+					"match": "\\b(set|show|hide|enable|disable|alert|update)\\b",
+					"name": "entity.name.function.sim"
+				},
+				{
+					"match": "\\b(clicks|hovers|changes|loads|blurs)\\b",
+					"name": "constant.language.symbol-type.sim"
+				},
+				{
+					"match": "\\b(value|width|visible|length|placeholder|label|validation|disabled|hidden)\\b",
+					"name": "variable.language.sim"
+				}
+			]
+		},
+		"types": {
+			"patterns": [
+				{
+					"comment": "element types",
+					"match": "\\b(with)\\s+([A-Z][A-Za-z0-9_]*)\\s+([A-Z][A-Za-z0-9_]*)\\b",
+					"captures": {
+						"0": {
+							"name": "keyword.declaration.sim"
+						},
+						"1": {
+							"name": "storage.type.sim"
+						},
+						"2": {
+							"name": "entity.name.type.declaration.sim"
+						}
+					}
+				},
+				{
+					"comment": "types",
+					"name": "entity.name.type.sim",
+					"match": "\\b[A-Z][A-Za-z0-9]*\\b(?!!)"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"match": "\\b(with|when|let)\\b",
+					"name": "keyword.declaration.sim"
+				},
+				{
+					"match": "\\b(as|to)\\b",
+					"name": "keyword.operator.sim"
+				},{
+					"match": "\\b(not|>|<|>=|<=|and|or|is|match)\\b",
+					"name": "keyword.operator.logical.sim"
+				},
+				{
+					"match": "\\b(mandatory|if|else)\\b",
+					"name": "keyword.control.sim"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"begin": "\"",
+					"end": "\"",
+					"name": "string.quoted.double.sim",
+					"patterns": [
+						{
+							"match": "\\n",
+							"name": "invalid.string.newline"
+						}
+					]
+				}
+			]
+		}
+	},
+	"scopeName": "source.sim"
+}

@@ -1,0 +1,46 @@
+{
+    "with block": {
+        "prefix": "with",
+        "body": [
+            "with ${1:type} ${2:name}",
+            "\twith description",
+            "\twith properties",
+            "\t\twidth ${3:width}",
+            "\t\thidden",
+            "\twith defaults",
+            "\twith rules",
+            "\twith interactions",
+            "\t\twhen clicks",
+            
+        ]
+    },
+    "form": {
+        "prefix": "form",
+        "body": [
+            "with Form ${1:name}",
+            "\twith description",
+            "\twith properties",
+            "\t\twidth ${3:width}",
+            "\t\tvisible true",
+            "\twith defaults",
+            "\twith rules",
+            "\twith interactions",
+            "\t\twhen clicks",
+        ]
+    },
+    "application": {
+        "prefix": "application",
+        "body": [
+            "let Application ${1:name}",
+            "\twith Form ${2:name}",
+            "\t\twith description",
+            "\t\twith properties",
+            "\t\t\twidth ${3:width}",
+            "\t\t\tvisible true",
+            "\t\twith defaults",
+            "\t\twith rules",
+            "\t\twith interactions",
+            "\t\t\twhen clicks",
+        ]
+    }
+}

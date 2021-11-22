@@ -1,0 +1,41 @@
+{
+    "name": "sim",
+    "displayName": "SIM",
+    "description": "Standard input model",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.54.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "sim",
+            "aliases": ["SIM", "sim"],
+            "extensions": [".sim"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "sim",
+            "scopeName": "source.sim",
+            "path": "./syntaxes/sim.tmLanguage.json"
+        }],
+        "snippets": [
+            {
+                "language": "sim",
+                "path": "./snippets/sim.code-snippets"
+            }
+        ],
+        "semanticTokenScopes": [
+            {
+                "language": "sim",
+                "scopes": {
+                    "function": [
+                        "entity.name.function.sim"
+                    ]
+                }
+            }
+        ]
+    }
+}
